@@ -1,0 +1,143 @@
+/* BASIC RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Full page background image + dark overlay */
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.6)),
+        url("photo.png") center/cover no-repeat;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    color: white;
+}
+
+/* System title and description */
+.hero-content {
+    max-width: 520px;
+}
+
+
+/* Main heading */
+.system-title {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+/* Subtitle text */
+.system-subtitle {
+    margin-top: 20px;
+    font-size: 17px;
+    color: #E0E4E8;
+}
+
+/* Container for login & signup forms */
+.form-wrapper {
+    width: 380px;
+}
+
+/* White card for forms */
+.card {
+    background: linear-gradient(#F4F6F7, #EAECEE);
+    padding: 32px;
+    border-radius: 14px;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.45);
+    color: #0B1C2D;
+}
+
+/* Card heading */
+.card h2 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/* Small subtitle text */
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Label styling */
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* Input fields and dropdown */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #BDC3C7;
+}
+
+/* Input focus effect */
+input:focus, select:focus {
+    outline: none;
+    border-color: #0E2A47;
+}
+
+
+/* Form submit button */
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    background: linear-gradient(135deg, #E67E22, #F39C12);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Login / Register switch text */
+.switch {
+    text-align: center;
+    margin-top: 18px;
+}
+
+/* Clickable link text */
+.switch span {
+    color: #F39C12;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+/* Hide signup form at page load */
+#signup-box {
+    display: none;
+}
+
+
+/* Adjust layout for small screens */
+@media (max-width: 900px) {
+    body {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin-bottom: 40px;
+    }
+
+    .system-title {
+        font-size: 42px;
+    }
+}
