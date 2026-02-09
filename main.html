@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Page title -->
+    <title>Flood Relief Management System</title>
+
+    <!-- Responsive design for mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+     <!-- Hero Section -->
+    <section class="hero-content">
+        <h1 class="system-title">
+            Flood Relief <br> Management System
+        </h1>
+        <br>
+        <p class="system-subtitle">
+            Centralized platform for managing flood relief requests and response data.<br>  
+        </p>
+    </section>
+
+
+    <!-- Form Section -->
+    <section class="form-wrapper">
+
+        <!-- Login Form-->
+        <div class="card" id="login-box">
+            <h2>Sign In</h2>
+            <p class="subtitle">Access the relief management system</p>
+
+            <form>
+
+                <!-- Username input -->
+                <label>Username</label>
+                <input type="text" placeholder="Enter username" required>
+
+                <!-- Password input -->
+                <label>Password</label>
+                <input type="password" placeholder="Enter password" required>
+
+                <!-- Submit button -->
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- Switch to signup form -->
+            <p class="switch">
+                Don’t have an account?
+                <span onclick="showSignup()">Register</span>
+            </p>
+        </div>
+
+
+
+
+        <!-- Sign up form-->
+        <div class="card" id="signup-box">
+            <h2>Create Account</h2>
+            <p class="subtitle">Register to request flood relief</p>
+
+            <form>
+
+                 <!-- Full name -->
+                <label>Full Name</label>
+                <input type="text" placeholder="Your full name" required>
+
+                <!-- Email address -->
+                <label>Email</label>
+                <input type="email" placeholder="Your email address" required>
+
+                <!-- Password -->
+                <label>Password</label>
+                <input type="password" placeholder="Choose a password" required>
+
+                <!-- User role selection -->
+                <label>User Role</label>
+                <select>
+                    <option>Affected Person</option>
+                    <option>Administrator</option>
+                </select>
+
+                <!-- Submit button -->
+                <button type="submit">Register</button>
+            </form>
+
+            <!-- Switch back to login form -->
+            <p class="switch">
+                Already registered?
+                <span onclick="showLogin()">Login here</span>
+            </p>
+        </div>
+
+    </section>
+
+  
+
+    <!-- External JS file -->
+<script src="script.js"></script>
+
+</body>
+</html>
