@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Submit Relief Request</title>
+<link rel="stylesheet" href="user_style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <h2>Flood Relief</h2>
+        <a href="#">Dashboard</a>
+        <a href="#">My Requests</a>
+        <a class="active" href="#">Submit Request</a>
+        <a href="#">Update Profile</a>
+        <a href="#">Logout</a>
+    </aside>
+
+
+    <main class="main">
+        <header class="header">
+            <div class="header-overlay">
+            <h1>Submit Relief Request</h1>
+            <p>Request assistance during the flood emergency.</p>
+            </div>
+        </header>
+
+        <section class="card">
+            <h3>Relief Details</h3>
+
+<div class="relief-types">
+    <button class="relief-btn" onclick="toggleRelief(this)">Food</button>
+    <button class="relief-btn" onclick="toggleRelief(this)">Water</button>
+    <button class="relief-btn" onclick="toggleRelief(this)">Medicine</button>
+    <button class="relief-btn" onclick="toggleRelief(this)">Shelter</button>
+</div>
+
+            <div class="severity">
+                <label>Flood Severity Level:</label>
+                <label><input type="radio" name="severity"> Low</label>
+                <label><input type="radio" name="severity"> Medium</label>
+                <label><input type="radio" name="severity" checked> High</label>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3>Location Information</h3>
+            <select><option>District</option></select>
+            <select><option>Divisional Secretariat</option></select>
+            <select><option>GN Division</option></select>
+        </section>
+
+        <section class="card">
+            <h3>Household Information</h3>
+
+            <div class="grid">
+                <input type="text" placeholder="Contact Person Name">
+                <input type="text" placeholder="Contact Number">
+                <input type="text" placeholder="Address">
+                <input type="number" placeholder="Number of Family Members">
+            </div>
+        </section>
+
+        <section class="card">
+            <h3>Additional Details</h3>
+            <textarea placeholder="Describe any special needs or requirements..."></textarea>
+        </section>
+
+        <div class="actions">
+            <button class="cancel">Cancel</button>
+            <button class="submit" onclick="showPopup()">Submit Request</button>
+        </div>
+
+    </main>
+</div>
+
+<div id="popup">
+    <p>Your relief request has been created successfully.</p>
+    <button onclick="closePopup()">OK</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
