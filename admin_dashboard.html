@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Import Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="admin_style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- THIS IS THE MENU LIST (Sidebar) -->
+        <!-- On mobile, this is hidden. The button slides it in. -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Flood Relief</h2>
+                <p>Admin Panel</p>
+            </div>
+            <nav>
+                <!-- Your Menu Links -->
+                <a href="Admin_dashboard.html" class="active">Dashboard</a>
+                <a href="admin_users.html">User Details</a>
+                <a href="admin_reports.html">Reports</a>
+                <a href="#" class="logout">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Header with the Mobile Menu Button -->
+            <header>
+                <!-- Clicking this button toggles the .active class on the sidebar -->
+                <button id="menuToggle" class="mobile-menu-btn">&#9776;</button>
+                
+                <div>
+                    <h1>System Overview</h1>
+                    <p>Welcome back, Admin</p>
+                </div>
+            </header>
+
+            <!-- Statistics Cards -->
+            <section class="stats-grid">
+                <div class="card">
+                    <h3>Total Users</h3>
+                    <p id="totalUsers">0</p>
+                </div>
+                <div class="card">
+                    <h3>Total Requests</h3>
+                    <p id="totalRequests">0</p>
+                </div>
+                <div class="card urgent">
+                    <h3>High Severity</h3>
+                    <p id="highSeverity">0</p>
+                </div>
+                <div class="card">
+                    <h3>Pending</h3>
+                    <p id="pendingRequests">0</p>
+                </div>
+            </section>
+
+            <!-- Relief Distribution Bars -->
+            <section class="charts-section">
+                <h2>Relief Type Distribution</h2>
+                
+                <div class="bar-group">
+                    <div class="bar-label">
+                        <span>Food</span>
+                        <span id="foodCount">0</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill food" id="foodBar"></div>
+                    </div>
+                </div>
+
+                <div class="bar-group">
+                    <div class="bar-label">
+                        <span>Water</span>
+                        <span id="waterCount">0</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill water" id="waterBar"></div>
+                    </div>
+                </div>
+
+                <div class="bar-group">
+                    <div class="bar-label">
+                        <span>Medicine</span>
+                        <span id="medicineCount">0</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill medicine" id="medicineBar"></div>
+                    </div>
+                </div>
+
+                <div class="bar-group">
+                    <div class="bar-label">
+                        <span>Shelter</span>
+                        <span id="shelterCount">0</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill shelter" id="shelterBar"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Requests Table -->
+            <section class="table-section">
+                <div class="table-header">
+                    <h2>Recent Requests</h2>
+                    <button onclick="window.location.href='admin_reports.php'">View Full Report</button>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>User Name</th>
+                            <th>Type</th>
+                            <th>District</th>
+                            <th>Severity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="requestsTableBody">
+                        <!-- Rows will be added here by JS -->
+                        <tr>
+                            <td colspan="6" style="text-align:center;">Loading data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Link to JS -->
+    <script src="admin_dashboard.js"></script>
+</body>
+</html>
+
+
