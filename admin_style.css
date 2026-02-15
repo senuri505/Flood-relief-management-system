@@ -1,0 +1,265 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #1e293b;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    
+    /* Sticky Sidebar Logic */
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.logo h2 { font-size: 20px; margin-bottom: 5px; }
+.logo p { font-size: 12px; opacity: 0.7; margin-bottom: 30px; }
+
+.sidebar nav a {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.sidebar nav a:hover, .sidebar nav a.active {
+    background-color: #334155;
+    color: white;
+}
+
+.sidebar nav a.logout {
+    margin-top: auto;
+    color: #f87171;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* --- Header Styles --- */
+header {
+    margin-bottom: 30px;
+}
+
+header h1 { font-size: 28px; color: #1e293b; }
+header p { color: #64748b; }
+
+/* Mobile Menu Button Styles */
+.mobile-menu-btn {
+    display: none; /* HIDDEN on Desktop by default */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    margin-right: 15px;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-left: 5px solid #3b82f6;
+}
+
+.card.urgent { border-left-color: #ef4444; }
+
+.card h3 { font-size: 14px; color: #64748b; font-weight: 500; }
+.card p { font-size: 28px; font-weight: 700; margin-top: 5px; color: #1e293b; }
+
+/* Charts / Bars */
+.charts-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.charts-section h2 { margin-bottom: 20px; font-size: 18px; }
+
+.bar-group { margin-bottom: 15px; }
+.bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.progress-bg {
+    width: 100%;
+    height: 10px;
+    background-color: #e2e8f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 1s ease-in-out;
+}
+
+/* Bar Colors */
+.food { background-color: #f59e0b; }
+.water { background-color: #3b82f6; }
+.medicine { background-color: #ec4899; }
+.shelter { background-color: #10b981; }
+
+/* Table Section */
+.table-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-header button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+th { color: #64748b; font-weight: 600; }
+
+/* Badges */
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.badge-high { background: #fee2e2; color: #991b1b; }
+.badge-medium { background: #fef3c7; color: #92400e; }
+.badge-low { background: #d1fae5; color: #065f46; }
+.badge-pending { background: #e2e8f0; color: #475569; }
+.badge-approved { background: #d1fae5; color: #065f46; }
+
+
+/* --- Responsive Design for Mobile Screens --- */
+@media (max-width: 768px) {
+    
+    /* 1. SHOW the menu button only on mobile */
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    /* 2. Layout adjustments for Header to align button and text */
+    header {
+        display: flex;
+        align-items: center; /* Vertically center button and text */
+        margin-bottom: 20px;
+    }
+
+    header h1 { font-size: 22px; }
+    
+    /* 3. Sidebar: Hide off-screen */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        z-index: 9999;
+        background-color: #1e293b;
+        transition: 0.3s;
+    }
+
+    /* Class to show sidebar */
+    .sidebar.active {
+        left: 0;
+    }
+
+    /* 4. Main Content */
+    .main-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* 5. Stats Grid */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* 6. Cards */
+    .card { padding: 15px; }
+    .card p { font-size: 24px; }
+
+    /* 7. Charts */
+    .charts-section { padding: 20px; }
+
+    /* 8. Table Section */
+    .table-section {
+        padding: 15px;
+        overflow-x: auto;
+    }
+    
+    table { min-width: 600px; }
+
+    /* 9. Table Header */
+    .table-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .table-header button { width: 100%; }
+}
