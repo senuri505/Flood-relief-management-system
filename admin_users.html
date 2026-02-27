@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Users</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin_style.css"> 
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo"><h2>Flood Relief</h2><p>Admin Panel</p></div>
+            <nav>
+                <a href="admin_dashboard.html">Dashboard</a>
+                <a href="#" class="active">Manage Users</a>
+                <a href="admin_reports.html">Reports</a>
+                <a href="#" class="logout">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header><h1>Manage Users</h1></header>
+
+            <!-- Filter / Search -->
+            <div class="filter-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search name or email..." onkeyup="filterTable()">
+                <div>
+                    <strong>Total Users:</strong> <span id="userCount">0</span>
+                </div>
+            </div>
+
+            <!-- Users Table -->
+            <section class="table-section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Requests</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTable">
+                        <tr><td colspan="6">Loading users...</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="modal-overlay">
+        <div class="modal-box">
+            <h3>Delete User?</h3>
+            <p>This will also delete all their relief requests.</p>
+            <div class="modal-actions">
+                <button onclick="closeModal()" style="padding:8px 20px; cursor:pointer;">Cancel</button>
+                <button onclick="confirmDelete()" style="padding:8px 20px; background:red; color:white; border:none; cursor:pointer;">Yes, Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin_users.js"></script>
+</body>
+</html>
