@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin_style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo"><h2>Flood Relief</h2><p>Admin Panel</p></div>
+            <nav>
+                <a href="admin_dashboard.html">Dashboard</a>
+                <a href="admin_users.html" class="active">Manage Users</a>
+                <a href="admin_reports.html">Reports</a>
+                <a href="#" class="logout">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>User Summary Report</h1>
+                <button onclick="window.history.back()" style="padding:8px 15px; cursor:pointer;">← Back to Users</button>
+            </header>
+
+            <!-- User Profile Card -->
+            <section class="stats-grid" style="grid-template-columns: 1fr;"> 
+                <div class="card" style="border-left-color: #3b82f6;">
+                    <h3 style="font-size:16px; color:#64748b;">Account Information</h3>
+                    <div style="margin-top:20px; display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+                        <div>
+                            <p style="font-size:12px; color:#999; margin-bottom:5px;">FULL NAME</p>
+                            <h2 id="detailName" style="font-size:20px;">Loading...</h2>
+                        </div>
+                        <div>
+                            <p style="font-size:12px; color:#999; margin-bottom:5px;">USER ID</p>
+                            <h2 id="detailId" style="font-size:20px;">-</h2>
+                        </div>
+                        <div>
+                            <p style="font-size:12px; color:#999; margin-bottom:5px;">EMAIL ADDRESS</p>
+                            <h4 id="detailEmail" style="font-size:16px;">-</h4>
+                        </div>
+                        <div>
+                            <p style="font-size:12px; color:#999; margin-bottom:5px;">ROLE</p>
+                            <h4 id="detailRole" style="font-size:16px;">-</h4>
+                        </div>
+                        <div>
+                            <p style="font-size:12px; color:#999; margin-bottom:5px;">REGISTERED DATE</p>
+                            <h4 id="detailDate" style="font-size:16px;">-</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Activity Section -->
+            <section class="table-section" style="margin-top:20px;">
+                <h2>Request History (This User)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Type</th>
+                            <th>Severity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userRequestsTable">
+                        <tr><td colspan="4">Loading requests...</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="admin_user_details.js"></script>
+</body>
+</html>
