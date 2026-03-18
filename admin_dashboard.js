@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // 1. Setup Menu Toggle FIRST
     const menuToggle = document.getElementById('menuToggle');
     const sidebar = document.querySelector('.sidebar');
@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Toggle Sidebar
     if (menuToggle) {
-        menuToggle.addEventListener('click', function(e) {
+        menuToggle.addEventListener('click', function (e) {
             e.stopPropagation(); // Prevent click from bubbling
             sidebar.classList.toggle('active');
         });
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close sidebar when clicking outside on main content
     if (mainContent && sidebar) {
-        mainContent.addEventListener('click', function() {
+        mainContent.addEventListener('click', function () {
             if (sidebar.classList.contains('active')) {
                 sidebar.classList.remove('active');
             }
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function loadDashboardData() {
     // Fetch data from the PHP file
-    fetch('fetch_dashboard.php')
+    fetch('admin_users_backend.php?action=get_dashboard_summary')
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
             return response.json();
@@ -47,7 +47,7 @@ function loadDashboardData() {
         })
         .catch(error => {
             console.error('Error loading data:', error);
-            document.getElementById('requestsTableBody').innerHTML = 
+            document.getElementById('requestsTableBody').innerHTML =
                 '<tr><td colspan="6" style="text-align:center; color:red;">Failed to load data.</td></tr>';
         });
 }
@@ -55,7 +55,7 @@ function loadDashboardData() {
 function updateBars(reliefData) {
     // Calculate total to find percentage
     const total = reliefData.food + reliefData.water + reliefData.medicine + reliefData.shelter;
-    
+
     // Helper to set width
     const setWidth = (id, count) => {
         const percentage = total === 0 ? 0 : (count / total) * 100;
