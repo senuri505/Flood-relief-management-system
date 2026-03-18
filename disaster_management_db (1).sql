@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2026 at 01:07 PM
+-- Generation Time: Mar 18, 2026 at 06:08 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -46,6 +46,13 @@ CREATE TABLE `relief_requests` (
   `gn_division` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `relief_requests`
+--
+
+INSERT INTO `relief_requests` (`id`, `user_id`, `relief_type`, `severity_level`, `district`, `location_details`, `contact_person`, `contact_number`, `address`, `family_members`, `special_needs`, `status`, `created_at`, `updated_at`, `divisional_secretariat`, `gn_division`) VALUES
+(1, 4, 'Food', 'Medium', 'Colombo', NULL, 'imalsha senuri', '0743787388', 'ww', 3, 'sss', 'Pending', '2026-03-18 10:42:12', '2026-03-18 16:21:13', 'sss', 'ww');
+
 -- --------------------------------------------------------
 
 --
@@ -54,20 +61,21 @@ CREATE TABLE `relief_requests` (
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` varchar(50) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `full_name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES
-(2, 'geenadi', 'geenadi.20240251@iit.ac.lk', '$2y$10$r3q8DKsOHAoegEwlr3oRU.6zRhXePqK/80sXA.a5xlQcKFN9HiIv2', 'Administrator', '2026-03-04 15:43:04', '2026-03-04 15:43:04');
+INSERT INTO `users` (`id`, `email`, `password`, `role`, `created_at`, `updated_at`, `full_name`) VALUES
+(4, 's@gmail.com', '$2y$10$XMhmLktNy5Ye0piwGeXzXOCalwkXmTdbqfNpXvHdFFE0FvrJ4zCy.', 'User', '2026-03-18 10:41:50', '2026-03-18 10:41:50', 'imalsha'),
+(5, 'r12@gmail.com', '$2y$10$ygmBevxNAoGnh8qD32Jk9eKi0SRoB.I.zW2bMWGyMvJ.GV7vvCsvu', 'Admin', '2026-03-18 15:07:24', '2026-03-18 15:07:24', 'Ranuthi');
 
 --
 -- Indexes for dumped tables
@@ -95,13 +103,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `relief_requests`
 --
 ALTER TABLE `relief_requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

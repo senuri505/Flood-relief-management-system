@@ -1,8 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System Reports</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="admin_style.css">
@@ -12,39 +13,56 @@
             display: grid;
             grid-template-columns: 1fr 1fr auto;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             background: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
-        select, button {
+
+        select,
+        button {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-family: 'Poppins', sans-serif;
         }
+
         button {
-            background: #3b82f6; color: white; border: none; cursor: pointer;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            cursor: pointer;
         }
-        button:hover { background: #2563eb; }
+
+        button:hover {
+            background: #2563eb;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
-            <div class="logo"><h2>Flood Relief</h2><p>Admin Panel</p></div>
+            <div class="logo">
+                <h2>Flood Relief</h2>
+                <p>Admin Panel</p>
+            </div>
             <nav>
-                <a href="admin_dashboard.html">Dashboard</a>
+                <a href="index.html">Dashboard</a>
                 <a href="admin_users.html">Manage Users</a>
-                <a href="#" class="active">Reports</a>
-                <a href="#" class="logout">Logout</a>
+                <a href="admin_reports.html" class="active">Reports</a>
+                <a href="main.html" class="logout">Logout</a>
             </nav>
         </aside>
 
         <main class="main-content">
-            <header><h1>System Reports</h1></header>
+            <header>
+                <!-- Clicking this button toggles the .active class on the sidebar -->
+                <button id="menuToggle" class="mobile-menu-btn">&#9776;</button>
+                <h1>System Reports</h1>
+            </header>
 
             <!-- Filters -->
             <section class="filter-controls">
@@ -100,18 +118,36 @@
                             <th>User</th>
                             <th>Type</th>
                             <th>District</th>
+                            <th>Div. Secretariat</th>
+                            <th>GN Division</th>
                             <th>Severity</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody id="reportTableBody">
-                        <tr><td colspan="6" style="text-align:center;">Click 'Generate Report' to view data.</td></tr>
+                        <tr>
+                            <td colspan="8" style="text-align:center;">Click 'Generate Report' to view data.</td>
+                        </tr>
                     </tbody>
                 </table>
             </section>
         </main>
     </div>
 
+    <!--  Footer  -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy 2026 Flood Relief Management System</p>
+            <p>Designed by University of Sri Jayewardenepura</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
     <script src="admin_reports.js"></script>
 </body>
+
 </html>

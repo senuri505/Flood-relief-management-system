@@ -1,4 +1,26 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    // 1. Setup Menu Toggle FIRST
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.querySelector('.sidebar');
+    const mainContent = document.querySelector('.main-content');
+
+    // Toggle Sidebar
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent click from bubbling
+            sidebar.classList.toggle('active');
+        });
+    }
+
+    // Close sidebar when clicking outside on main content
+    if (mainContent && sidebar) {
+        mainContent.addEventListener('click', function () {
+            if (sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+            }
+        });
+    }
+
     // 1. Get User ID from URL (e.g., admin_user_details.html?id=5)
     const urlParams = new URLSearchParams(window.location.search);
     const userId = urlParams.get('id');
@@ -7,8 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
         fetchUserDetails(userId);
     } else {
         alert('No User ID provided');
-        window.location.href = 'admin_users.html';
+        window.location.href = 'admin_users.html'; // Redirect back to users list
     }
+    
 });
 
 function fetchUserDetails(id) {
@@ -21,10 +44,10 @@ function fetchUserDetails(id) {
                 return;
             }
             // Fill the Profile Card
-            document.getElementById('detailName').innerText = user.name;
+            document.getElementById('detailName').innerText = user.full_name;
             document.getElementById('detailId').innerText = '#' + user.id;
             document.getElementById('detailEmail').innerText = user.email;
-            document.getElementById('detailRole').innerText = user.role.toUpperCase();
+            document.getElementById('detailRole').innerText = (user.role || 'User').toUpperCase();
             document.getElementById('detailDate').innerText = user.created_at;
 
             // Fetch this user's specific requests
@@ -43,7 +66,7 @@ function fetchUserRequests(userId) {
             const tbody = document.getElementById('userRequestsTable');
             tbody.innerHTML = '';
 
-            if(requests.length === 0) {
+            if (requests.length === 0) {
                 tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;">No requests submitted.</td></tr>';
                 return;
             }
@@ -53,6 +76,7 @@ function fetchUserRequests(userId) {
                     <tr>
                         <td>#${req.id}</td>
                         <td>${req.type}</td>
+                        <td>${req.district}</td>
                         <td>${req.severity}</td>
                         <td>${req.status}</td>
                     </tr>
