@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Request</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Custom CSS for homepage styling -->
+    <link rel="stylesheet" href="submit_request.css">
+
+        <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+
+
+<body>
+
+   <!-- Mobile top bar -->
+<header class="topbar">
+        <!-- Hamburger menu for mobile view -->
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+        <!-- Site title -->
+    <h3> Flood Relief</h3>
+</header>
+
+
+
+
+
+           <!-- Checkbox for side bar -->
+    <input type="checkbox" id="menu-toggle">
+
+    <div class="container">
+
+        <!--  Side bar  -->
+        <aside class="sidebar">
+            <h2>Flood Relief</h2>
+            <a href="home.html" ><i class="fas fa-home"></i> Home</a>
+            <a href="submit_request.html" class="active"><i class="fas fa-file-alt"></i> Submit Request</a>
+            <a href="my_requests.php"><i class="fas fa-list"></i> My Requests</a>
+            <a href="main.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </aside>
+
+        <!--  Main content  -->
+        <main class="main">
+
+
+
+
+
+        <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-overlay">
+                    <h1>Submit Flood Relief Request</h1>
+                    
+                </div>
+            </section>
+
+           <!-- About Section -->
+            <section class="about">
+                <h2>Provide Information to Request Aid</h2>
+                <p>
+                    Use this form to detail your family's needs for food, water, medicine, or temporary shelter. 
+                    Providing accurate and complete information helps relief providers coordinate assistance efficiently and reach those in urgent need. 
+                    Ensure location details and contact numbers are precise.
+                </p>
+            </section>
+
+
+
+            
+
+        <!-- Form card -->
+        <div class="card">
+            <h2>Submit Flood Relief Request</h2>
+
+            <!-- Relief request form -->
+          <form id="reliefForm" onsubmit="return validateForm()" action="submit_request.php" method="POST">
+
+            <!-- Type of relief needed -->
+                <label>Relief Type</label>
+                     <select id="reliefType" name="relief_type" required>
+                            <option value="">Select Relief Type</option>
+                            <option>Food</option>
+                            <option>Water</option>
+                            <option>Medicine</option>
+                            <option>Shelter</option>
+                    </select>
+
+
+    <!-- Location details -->
+    <label>District</label>
+    <input type="text" id="district" name="district" required>
+
+    <label>Divisional Secretariat</label>
+    <input type="text" id="dsDivision" name="divisional_secretariat" required>
+
+    <label>GN Division</label>
+    <input type="text" id="gnDivision" name="gn_division" required>
+
+    <!-- Contact details -->
+    <label>Contact Name</label>
+    <input type="text" id="contactName" name="contact_person" required>
+
+    <label>Contact Number</label>
+    <input type="tel" id="contactNumber" name="contact_number" required>
+
+    <label>Address</label>
+    <textarea id="address" name="address" rows="3" required></textarea>
+
+     <!-- Family details -->
+    <label>Number of Family Members</label>
+    <input type="number" id="familyMembers" name="family_members" min="1" required>
+
+    <!-- Flood severity level -->
+    <label>Flood Severity Level</label>
+    <div class="radio-group">
+        <label><input type="radio" name="severity_level" value="Low" required> Low</label>
+        <label><input type="radio" name="severity_level" value="Medium"> Medium</label>
+        <label><input type="radio" name="severity_level" value="High"> High</label>
+    </div>
+
+    <label>Description / Special Needs</label>
+    <textarea id="description" name="special_needs" rows="4" required></textarea>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn-submit">Submit Request</button>
+</form>
+        </div>
+
+    </main>
+</div>
+
+
+
+ <!--  Footer  -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy 2026 Flood Relief Management System</p>
+            <p>Designed by University of Sri Jayewardenepura</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
