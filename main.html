@@ -12,11 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <!-- External CSS file -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 
 
+
 <body>
+
+    
 
      <!-- Hero Section -->
     <section class="hero-content">
@@ -38,19 +41,11 @@
             <h2>Sign In</h2>
             <p class="subtitle">Access the relief management system</p>
 
-            <form>
-
-                <!-- Username input -->
-                <label>Username</label>
-                <input type="text" placeholder="Enter username" required>
-
-                <!-- Password input -->
-                <label>Password</label>
-                <input type="password" placeholder="Enter password" required>
-
-                <!-- Submit button -->
-                <button type="submit">Login</button>
-            </form>
+           <form action="login.php" method="POST">
+    <input type="email" name="email" placeholder="Enter email" required>
+    <input type="password" name="password" placeholder="Enter password" required>
+    <button type="submit" name="login">Login</button>
+</form>
 
             <!-- Switch to signup form -->
             <p class="switch">
@@ -67,30 +62,17 @@
             <h2>Create Account</h2>
             <p class="subtitle">Register to request flood relief</p>
 
-            <form>
+            <form action="signup.php" method="POST">
+    <input type="text" name="full_name" placeholder="Your full name" required>
+    <input type="email" name="email" placeholder="Your email address" required>
+    <input type="password" name="password" placeholder="Choose a password" required>
+    <select name="role">
+        <option value="User">Affected Person</option>
+        <option value="Admin">Administrator</option>
+    </select>
+    <button type="submit" name="register">Register</button>
+</form>
 
-                 <!-- Full name -->
-                <label>Full Name</label>
-                <input type="text" placeholder="Your full name" required>
-
-                <!-- Email address -->
-                <label>Email</label>
-                <input type="email" placeholder="Your email address" required>
-
-                <!-- Password -->
-                <label>Password</label>
-                <input type="password" placeholder="Choose a password" required>
-
-                <!-- User role selection -->
-                <label>User Role</label>
-                <select>
-                    <option>Affected Person</option>
-                    <option>Administrator</option>
-                </select>
-
-                <!-- Submit button -->
-                <button type="submit">Register</button>
-            </form>
 
             <!-- Switch back to login form -->
             <p class="switch">
@@ -104,7 +86,7 @@
   
 
     <!-- External JS file -->
-<script src="script.js"></script>
+<script src="main.js"></script>
 
 </body>
 </html>
