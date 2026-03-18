@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Details</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="admin_style.css">
 </head>
+
 <body>
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
-            <div class="logo"><h2>Flood Relief</h2><p>Admin Panel</p></div>
+            <div class="logo">
+                <h2>Flood Relief</h2>
+                <p>Admin Panel</p>
+            </div>
             <nav>
-                <a href="admin_dashboard.html">Dashboard</a>
+                <a href="index.html">Dashboard</a>
                 <a href="admin_users.html" class="active">Manage Users</a>
                 <a href="admin_reports.html">Reports</a>
-                <a href="#" class="logout">Logout</a>
+                <a href="main.html" class="logout">Logout</a>
             </nav>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
             <header>
+                <!-- Clicking this button toggles the .active class on the sidebar -->
+                <button id="menuToggle" class="mobile-menu-btn">&#9776;</button>
                 <h1>User Summary Report</h1>
-                <button onclick="window.history.back()" style="padding:8px 15px; cursor:pointer;">← Back to Users</button>
+                <button onclick="window.history.back()" style="padding:8px 15px; cursor:pointer;">← Back to
+                    Users</button>
             </header>
 
             <!-- User Profile Card -->
-            <section class="stats-grid" style="grid-template-columns: 1fr;"> 
+            <section class="stats-grid" style="grid-template-columns: 1fr;">
                 <div class="card" style="border-left-color: #3b82f6;">
                     <h3 style="font-size:16px; color:#64748b;">Account Information</h3>
                     <div style="margin-top:20px; display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
@@ -63,18 +72,34 @@
                         <tr>
                             <th>Request ID</th>
                             <th>Type</th>
+                            <th>District</th>
                             <th>Severity</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody id="userRequestsTable">
-                        <tr><td colspan="4">Loading requests...</td></tr>
+                        <tr>
+                            <td colspan="4">Loading requests...</td>
+                        </tr>
                     </tbody>
                 </table>
             </section>
         </main>
     </div>
 
+    <!--  Footer  -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy 2026 Flood Relief Management System</p>
+            <p>Designed by University of Sri Jayewardenepura</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
     <script src="admin_user_details.js"></script>
 </body>
+
 </html>
