@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
     <!-- Link to CSS -->
     <link rel="stylesheet" href="admin_style.css">
 </head>
+
 <body>
 
     <div class="container">
-        
+
         <!-- THIS IS THE MENU LIST (Sidebar) -->
         <!-- On mobile, this is hidden. The button slides it in. -->
         <aside class="sidebar">
@@ -22,21 +24,21 @@
             </div>
             <nav>
                 <!-- Your Menu Links -->
-                <a href="Admin_dashboard.html" class="active">Dashboard</a>
-                <a href="admin_users.html">User Details</a>
+                <a href="index.html" class="active">Dashboard</a>
+                <a href="admin_users.html">Manage Users</a>
                 <a href="admin_reports.html">Reports</a>
-                <a href="#" class="logout">Logout</a>
+                <a href="main.html" class="logout">Logout</a>
             </nav>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
-            
+
             <!-- Header with the Mobile Menu Button -->
             <header>
                 <!-- Clicking this button toggles the .active class on the sidebar -->
                 <button id="menuToggle" class="mobile-menu-btn">&#9776;</button>
-                
+
                 <div>
                     <h1>System Overview</h1>
                     <p>Welcome back, Admin</p>
@@ -66,7 +68,7 @@
             <!-- Relief Distribution Bars -->
             <section class="charts-section">
                 <h2>Relief Type Distribution</h2>
-                
+
                 <div class="bar-group">
                     <div class="bar-label">
                         <span>Food</span>
@@ -112,9 +114,9 @@
             <section class="table-section">
                 <div class="table-header">
                     <h2>Recent Requests</h2>
-                    <button onclick="window.location.href='admin_reports.php'">View Full Report</button>
+                    <button onclick="window.location.href='admin_reports.html'">View Full Report</button>
                 </div>
-                
+
                 <table>
                     <thead>
                         <tr>
@@ -138,9 +140,21 @@
         </main>
     </div>
 
+    <!--  Footer  -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy 2026 Flood Relief Management System</p>
+            <p>Designed by University of Sri Jayewardenepura</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
     <!-- Link to JS -->
     <script src="admin_dashboard.js"></script>
 </body>
+
 </html>
-
-
